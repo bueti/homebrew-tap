@@ -2,9 +2,9 @@
 
 ## How do I install these formulae?
 
-`brew install bueti/bueti/<formula>`
+`brew install bueti/tap/<formula>`
 
-Or `brew tap bueti/bueti` and then `brew install <formula>`.
+Or `brew tap bueti/tap` and then `brew install <formula>`.
 
 ## Documentation
 
