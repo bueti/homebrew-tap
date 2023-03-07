@@ -16,7 +16,7 @@ Of course, Bocker will also do the reverse and restore your database from a back
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/bueti/bocker/releases/download/v0.8.2/bocker_0.8.2_darwin_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "af226d9c345b0f0f7eca5e2af381da22ccb4443420fbced96002e3d2578dc727"
+      sha256 "9d7c888686bef3c05c4b14bbcfd1dd52e65f6f8535ae43193c7fa3f4917d351b"
 
       def install
         bin.install "bocker"
@@ -24,7 +24,7 @@ Of course, Bocker will also do the reverse and restore your database from a back
     end
     if Hardware::CPU.intel?
       url "https://github.com/bueti/bocker/releases/download/v0.8.2/bocker_0.8.2_darwin_amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "7d481db68ae58a8381d9f73d9ae4aa7eaa375d276cd0b88196fd71df2119af6d"
+      sha256 "1a56df068d98cee75b8a9dc1aa17647b4233c5957422fb3a7ea5f4bdad1a2c0b"
 
       def install
         bin.install "bocker"
@@ -35,7 +35,7 @@ Of course, Bocker will also do the reverse and restore your database from a back
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/bueti/bocker/releases/download/v0.8.2/bocker_0.8.2_linux_amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "912f8b0447618fc6632a5ff68a178644534539bbbc692bf028b5c86a1fb5d832"
+      sha256 "75c476e458b33e2509a4c345b92bbd57b869df8602f119c164e2c5be0777178a"
 
       def install
         bin.install "bocker"
@@ -43,7 +43,7 @@ Of course, Bocker will also do the reverse and restore your database from a back
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/bueti/bocker/releases/download/v0.8.2/bocker_0.8.2_linux_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "da4db59728da69e73366756cd8685f31f74c4d2cddb6ed1f8efa927025655fc0"
+      sha256 "f35a8723d9ea485261bdcb5302bda6435b25235d39741b3582dd983e504e2bbd"
 
       def install
         bin.install "bocker"
