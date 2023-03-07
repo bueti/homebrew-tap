@@ -16,7 +16,7 @@ Of course, Bocker will also do the reverse and restore your database from a back
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/bueti/bocker/releases/download/v0.8.2/bocker_0.8.2_darwin_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "ad880a4da69aabab2e08c4c69015f7b5f48bb10b7d72b3e4ed0c0559de786ed3"
+      sha256 "4cc0e63b30ee3886ffb4f40583994605620b3658f74bcb895d29c62d8f20f172"
 
       def install
         bin.install "bocker"
@@ -24,7 +24,7 @@ Of course, Bocker will also do the reverse and restore your database from a back
     end
     if Hardware::CPU.intel?
       url "https://github.com/bueti/bocker/releases/download/v0.8.2/bocker_0.8.2_darwin_amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "3377d049998eba0e55b65df078c02c7ae41ef450c98ae0875e3ba63f9cf2414c"
+      sha256 "27a575867945cea53f7f73898187104f19d32559f84f2846e3c5e6773a36a2dc"
 
       def install
         bin.install "bocker"
@@ -33,17 +33,17 @@ Of course, Bocker will also do the reverse and restore your database from a back
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/bueti/bocker/releases/download/v0.8.2/bocker_0.8.2_linux_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "0f2640963c663062a4d6b1e5607a104ad45eba9d6e5952cb12ee830f511cb8cf"
+    if Hardware::CPU.intel?
+      url "https://github.com/bueti/bocker/releases/download/v0.8.2/bocker_0.8.2_linux_amd64.tar.gz", using: CurlDownloadStrategy
+      sha256 "9735c3e283a9863a227a1a903a9f712f73d625faba19d60bdc3bedfd9e5f3965"
 
       def install
         bin.install "bocker"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/bueti/bocker/releases/download/v0.8.2/bocker_0.8.2_linux_amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "0aa0c12e34ff073ca91d2a6b3ce6e235401618c98d5a3e1e511b9145c33085d1"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/bueti/bocker/releases/download/v0.8.2/bocker_0.8.2_linux_arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "1fe973bc8d81846bdcec4c00e6cb3b8d7b906437df0095aba6facfc0351bd4a6"
 
       def install
         bin.install "bocker"
