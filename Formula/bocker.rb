@@ -8,23 +8,23 @@ wraps it in a Docker image, and uploads it to Docker Hub.
 Of course, Bocker will also do the reverse and restore your database from a backup in Docker Hub.
 "
   homepage "https://github.com/bueti/bocker"
-  version "0.12.0"
+  version "0.13.0"
   license "MIT"
 
   depends_on "docker"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/bueti/bocker/releases/download/v0.12.0/bocker_0.12.0_darwin_amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "657c08d9a5cc79887e77b17b4e8de51300d8556e3f3ea54e1e1e628a455c2f39"
+      url "https://github.com/bueti/bocker/releases/download/v0.13.0/bocker_0.13.0_darwin_amd64.tar.gz", using: CurlDownloadStrategy
+      sha256 "b6f9790bdfdeaebe141999195ce2fa807503fd5582a026457235be5cdc6aa38d"
 
       def install
         bin.install "bocker"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/bueti/bocker/releases/download/v0.12.0/bocker_0.12.0_darwin_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "2e82986409c5adbe3e285e0b283afca1b7ca10f4c9a1b47a14114302dbffebab"
+      url "https://github.com/bueti/bocker/releases/download/v0.13.0/bocker_0.13.0_darwin_arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "0b56eff2b15474c57954683514174e5efc0316dd1083b78cbcbf5524ec5e82a4"
 
       def install
         bin.install "bocker"
@@ -33,17 +33,17 @@ Of course, Bocker will also do the reverse and restore your database from a back
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/bueti/bocker/releases/download/v0.12.0/bocker_0.12.0_linux_amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "8cb5c3c0ddc2d75c1684fa4933d9d24d04540afe3248199ec57e2f7e839a0197"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/bueti/bocker/releases/download/v0.13.0/bocker_0.13.0_linux_arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "8e91c26fa0d9e8901d1dfaa19df88fa05015300b219d875ee82bd2273c566772"
 
       def install
         bin.install "bocker"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/bueti/bocker/releases/download/v0.12.0/bocker_0.12.0_linux_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "50386813c920a88d309c2fc13e8de64cc4861985d9a3103fe5f149c330f1ea85"
+    if Hardware::CPU.intel?
+      url "https://github.com/bueti/bocker/releases/download/v0.13.0/bocker_0.13.0_linux_amd64.tar.gz", using: CurlDownloadStrategy
+      sha256 "f67d9d3c29260f9828c4e3739aefdbbc3c3da44c35c5d1b35dfec38bc3d96b36"
 
       def install
         bin.install "bocker"
