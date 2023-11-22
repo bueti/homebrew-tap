@@ -8,23 +8,23 @@ wraps it in a Docker image, and uploads it to Docker Hub.
 Of course, Bocker will also do the reverse and restore your database from a backup in Docker Hub.
 "
   homepage "https://shrink.ch"
-  version "0.0.5"
+  version "0.1.0"
   license "MIT"
 
   depends_on "docker"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/bueti/shrinkster/releases/download/v0.0.5/shrinkster_0.0.5_darwin_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "59d7aac8fb8e5cb657fdd23cb857b4ae43def13848661727849165e7fe679d05"
+      url "https://github.com/bueti/shrinkster/releases/download/v0.1.0/shrinkster_0.1.0_darwin_arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "73ef90fc992fddd9d29e27738e5157090b93f61442ccfbdb497eb9eaec505186"
 
       def install
         bin.install "shrink"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/bueti/shrinkster/releases/download/v0.0.5/shrinkster_0.0.5_darwin_amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "6683728712bb42808a5c8bbfa07885fcafe21f67e4245c306c72a60b666d26a7"
+      url "https://github.com/bueti/shrinkster/releases/download/v0.1.0/shrinkster_0.1.0_darwin_amd64.tar.gz", using: CurlDownloadStrategy
+      sha256 "d715cba1a4f63ac63ced417235cce9b6acaf1d0a6f8680251c96eba5bcc0c9a9"
 
       def install
         bin.install "shrink"
@@ -33,17 +33,17 @@ Of course, Bocker will also do the reverse and restore your database from a back
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/bueti/shrinkster/releases/download/v0.0.5/shrinkster_0.0.5_linux_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "453c3209a37b2d57738491d453ad8fc556f8c6bb8fb2d8b363da8d76d8d75ce0"
+    if Hardware::CPU.intel?
+      url "https://github.com/bueti/shrinkster/releases/download/v0.1.0/shrinkster_0.1.0_linux_amd64.tar.gz", using: CurlDownloadStrategy
+      sha256 "62e6110baf8bd06b6d0a972e0a584c0e49940ed7c8d21c7441da85f519dc08db"
 
       def install
         bin.install "shrink"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/bueti/shrinkster/releases/download/v0.0.5/shrinkster_0.0.5_linux_amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "f1242d410ae08e21fa528856d044a6360a210941ec8177b918f092071baf7389"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/bueti/shrinkster/releases/download/v0.1.0/shrinkster_0.1.0_linux_arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "d7f1f5daf8c0ff0ae92ca54834989f4bb8ad686e6eb6ce8b1d7b10a43887bd67"
 
       def install
         bin.install "shrink"
