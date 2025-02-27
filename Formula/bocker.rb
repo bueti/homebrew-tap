@@ -8,23 +8,23 @@ wraps it in a Docker image, and uploads it to Docker Hub.
 Of course, Bocker will also do the reverse and restore your database from a backup in Docker Hub.
 "
   homepage "https://github.com/bueti/bocker"
-  version "0.14.8"
+  version "0.14.9"
   license "MIT"
 
   depends_on "docker"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/bueti/bocker/releases/download/v0.14.8/bocker_0.14.8_darwin_amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "f1a3b3a71a782aeb355dd0912247bd9b4cea1c153e59a66d9978757d1c6523ae"
+      url "https://github.com/bueti/bocker/releases/download/v0.14.9/bocker_0.14.9_darwin_amd64.tar.gz", using: CurlDownloadStrategy
+      sha256 "92e9b401f4e47e2d77ca76c6f90ea6582ef16d09563113558488c103e8e20e91"
 
       def install
         bin.install "bocker"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/bueti/bocker/releases/download/v0.14.8/bocker_0.14.8_darwin_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "44525e729cd7b72892fad94e95dd5a2fac72a5c5a8635e23b2fa05bc77897f29"
+      url "https://github.com/bueti/bocker/releases/download/v0.14.9/bocker_0.14.9_darwin_arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "cdf67e836812e18eda323d5bcff401b8091f2d6b049f614e07a0f4acae424397"
 
       def install
         bin.install "bocker"
@@ -35,8 +35,8 @@ Of course, Bocker will also do the reverse and restore your database from a back
   on_linux do
     if Hardware::CPU.intel?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/bueti/bocker/releases/download/v0.14.8/bocker_0.14.8_linux_amd64.tar.gz", using: CurlDownloadStrategy
-        sha256 "f5c6edad2599da1b6b4f1b73304a7bfc4f6821c7e0b9275cc30202a3e400f866"
+        url "https://github.com/bueti/bocker/releases/download/v0.14.9/bocker_0.14.9_linux_amd64.tar.gz", using: CurlDownloadStrategy
+        sha256 "17600b017a2092c788af9cf4874a3c3b47644e99c6864cc47dfd52f3da28aee7"
 
         def install
           bin.install "bocker"
@@ -45,8 +45,8 @@ Of course, Bocker will also do the reverse and restore your database from a back
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/bueti/bocker/releases/download/v0.14.8/bocker_0.14.8_linux_arm64.tar.gz", using: CurlDownloadStrategy
-        sha256 "5f44a03d993bca0158acee02350399df625234918fbed0ded6a96448e2a6a637"
+        url "https://github.com/bueti/bocker/releases/download/v0.14.9/bocker_0.14.9_linux_arm64.tar.gz", using: CurlDownloadStrategy
+        sha256 "f9eee8646d07cfa1da11b45e1e20bf7fa7e6c17e651752572659d329d4a60d1a"
 
         def install
           bin.install "bocker"
